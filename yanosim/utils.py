@@ -45,7 +45,7 @@ def read_fasta(fasta_fn):
             read_id = list(read_id)
             assert len(read_id) == 1
             read_id = read_id[0][1:].strip()
-            read_id = re.split('[\s|]', read_id)[0]
+            read_id = re.split(r'[\s|]', read_id)[0]
             _, seq = next(header_grouped)
             seq = ''.join([line.strip() for line in seq])
             yield read_id, seq
